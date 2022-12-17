@@ -1,4 +1,4 @@
-# flutterblocdemo
+# flutter BLoC grup 2
 
 Demo app - Bloc Pattern
 
