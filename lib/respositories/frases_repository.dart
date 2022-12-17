@@ -1,7 +1,6 @@
 import 'dart:math';
 
 class FrasesRepository {
-
   final List<String> frases = [
     "Que la fuerza te acompañe",
     "Le voy a hacer una oferta que no podrá rechazar",
@@ -10,12 +9,10 @@ class FrasesRepository {
     "Elemental querido Watson",
     "Hasta la vista, baby...",
     "¡Está vivo! ¡Está viiivo!"
-
   ];
 
   Future<String> fraseAleatoria() async {
     var random = Random();
     return frases[random.nextInt(frases.length)];
   }
-
 }

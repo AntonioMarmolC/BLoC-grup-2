@@ -1,15 +1,18 @@
 import 'package:bloc/bloc.dart';
+import 'package:meta/meta.dart';
 import 'package:flutterblocdemo/respositories/frases_repository.dart';
 
-class FrasesBloc extends Bloc<FrasesEvent, FrasesState> {
+part 'practica_event.dart';
+part 'practica_state.dart';
 
+class FrasesBloc extends Bloc<FrasesEvent, FrasesState> {
   final FrasesRepository _frasesRepository;
 
   FrasesBloc(this._frasesRepository);
 
   @override
   FrasesState get initialState => FraseNoCargada();
-
+// 2. Metodo que se realizara cuando se realice este evento
   @override
   Stream<FrasesState> mapEventToState(FrasesEvent event) async* {
     if (event is CargarFrase) {
@@ -17,21 +20,9 @@ class FrasesBloc extends Bloc<FrasesEvent, FrasesState> {
     }
   }
 
-  Stream<FrasesState> _cargarFrase() async*{
+  Stream<FrasesState> _cargarFrase() async* {
     String frase = await _frasesRepository.fraseAleatoria();
 
     yield (FraseCargada(frase));
   }
-
-}
-
-abstract class FrasesEvent {}
-class CargarFrase extends FrasesEvent {}
-
-abstract class FrasesState {}
-class FraseNoCargada extends FrasesState {}
-class FraseCargada extends FrasesState {
-  final String frase;
-
-  FraseCargada(this.frase);
 }

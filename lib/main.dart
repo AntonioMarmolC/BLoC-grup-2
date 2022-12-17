@@ -59,9 +59,10 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 20,
             ),
             ElevatedButton(
-                onPressed: () =>
-                    BlocProvider.of<FrasesBloc>(context).add(CargarFrase()),
-                child: Text("Cargar Frase"))
+              onPressed: () => // 1. Esto activara el frasesEvent
+                  BlocProvider.of<FrasesBloc>(context).add(CargarFrase()),
+              child: Text("Cargar Frase"),
+            )
           ],
         ),
       ),
