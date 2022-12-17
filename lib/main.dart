@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutterblocdemo/blocs/frases_bloc.dart';
 import 'package:flutterblocdemo/respositories/frases_repository.dart';
+
+import 'blocs/practica_bloc.dart';
 
 void main() {
   runApp(MyApp());
