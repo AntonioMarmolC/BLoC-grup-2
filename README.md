@@ -1,6 +1,6 @@
 # flutter BLoC grup 2
 
-Demo app - Bloc Pattern
+Flutter grup 2 proves
 
 ## Getting Started
 
